@@ -1,0 +1,19 @@
+{
+  "name": "real_time_whisper_nodejs",
+  "version": "0.0.1",
+  "description": "Whisper in real time via websocket",
+  "main": "index.js",
+  "author": "howard@2023",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.mjs",
+    "model": "npx whisper-node download"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "socket.io": "^4.7.2",
+    "wav": "^1.0.2",
+    "whisper-node": "^0.2.12"
+  }
+}
