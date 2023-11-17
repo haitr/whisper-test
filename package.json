@@ -7,13 +7,13 @@
   "license": "MIT",
   "scripts": {
     "start": "node index.mjs",
-    "model": "npx whisper-node download"
+    "model": "npx nodejs-whisper download"
   },
   "dependencies": {
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "nodejs-whisper": "^0.1.6",
     "socket.io": "^4.7.2",
-    "wav": "^1.0.2",
-    "whisper-node": "^0.2.12"
+    "wav": "^1.0.2"
   }
 }

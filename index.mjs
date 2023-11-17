@@ -1,9 +1,9 @@
 import express from 'express';
 import * as fs from 'node:fs';
 import { createServer } from 'node:http';
+import { nodewhisper } from 'nodejs-whisper';
 import { Server } from 'socket.io';
 import { FileWriter } from 'wav';
-import { whisper } from 'whisper-node';
 
 const app = express();
 const server = createServer(app);
@@ -44,7 +44,7 @@ io.on('connection', (socket) => {
                 //     word_timestamps: true     // timestamp for every word
                 // }
             }
-            const transcript = await whisper(cachePath, options);
+            const transcript = await nodewhisper(cachePath, options);
             console.timeEnd('transcript');
             console.log('------');
             console.log(transcript);
