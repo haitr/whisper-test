@@ -33,7 +33,18 @@ io.on('connection', (socket) => {
         wavWriter.end(async () => {
             console.log('Done writing.');
             console.time('transcript');
-            const transcript = await whisper(cachePath);
+            const options = {
+                modelName: "medium",                   // default is tiny.en
+                // modelPath: "/custom/path/to/model.bin", // use model in a custom directory
+                // whisperOptions: {
+                //     gen_file_txt: false,      // outputs .txt file
+                //     gen_file_subtitle: false, // outputs .srt file
+                //     gen_file_vtt: false,      // outputs .vtt file
+                //     timestamp_size: 10,       // amount of dialogue per timestamp pair
+                //     word_timestamps: true     // timestamp for every word
+                // }
+            }
+            const transcript = await whisper(cachePath, options);
             console.timeEnd('transcript');
             console.log('------');
             console.log(transcript);
