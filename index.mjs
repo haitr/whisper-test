@@ -3,7 +3,7 @@ import * as fs from 'node:fs';
 import { createServer } from 'node:http';
 import { Server } from 'socket.io';
 import { FileWriter } from 'wav';
-import whisper from 'whisper-node';
+import { whisper } from 'whisper-node';
 
 const app = express();
 const server = createServer(app);
